@@ -309,6 +309,10 @@ export interface Options {
 	*/
 	pageStartIndex?: string;
     paginationSize?: number;
+    /**
+    True to hide the dropdown for sizePerPage.
+    */
+    hideSizePerPage?: boolean
 	/**
 	Assign a callback function which will be called after page changed.
 	This function taking two argument: page and sizePerPage.
@@ -490,10 +494,6 @@ export interface TableHeaderColumnProps extends Props<TableHeaderColumn> {
 	True to hide column.
 	*/
     hidden?: boolean;
-	/**
-	True to hide the dropdown for sizePerPage.
-	*/
-	hideSizePerPage?: boolean
 	/**
 	False to disable search functionality on column, default is true.
 	*/
