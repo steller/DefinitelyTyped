@@ -127,6 +127,7 @@ export interface BootstrapTableProps extends Props<BootstrapTable> {
 	bodyContainerClass?: string;
 	expandableRow?: (row: any) => boolean;
 	expandComponent?: (row: any) => any;
+    scrollTop?: number | 'Top' | 'Bottom';
 }
 
 export type SelectRowMode = 'none' | 'radio' | 'checkbox';
@@ -394,8 +395,10 @@ export interface Options {
     deleteText?: string;
     saveText?: string;
     closeText?: string;
+    expandBy?: ExpandByType;
 }
 
+export type ExpandByType = 'row' | 'column';
 
 interface FetchInfo {
     dataTotalSize?: number;
@@ -546,6 +549,13 @@ export interface TableHeaderColumnProps extends Props<TableHeaderColumn> {
     columnTitle?: boolean;
     sort?: SortOrder;
     formatExtraData?: any;
+    /**
+    If false, tell the react-bootstrap-table do not export this column when exporting csv
+    */
+    export?: boolean;
+    expandable?: boolean;
+    editColumnClassName?: string;
+    headerText?: string;
 }
 export interface Editable {
     type?: string;//edit type, avaiable value is textarea, select, checkbox
